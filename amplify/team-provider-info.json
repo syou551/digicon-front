@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kmc1-staging-74012-authRole",
+      "UnauthRoleArn": "arn:aws:iam::949534156867:role/amplify-kmc1-staging-74012-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::949534156867:role/amplify-kmc1-staging-74012-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-kmc1-staging-74012-deployment",
+      "UnauthRoleName": "amplify-kmc1-staging-74012-unauthRole",
+      "StackName": "amplify-kmc1-staging-74012",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:949534156867:stack/amplify-kmc1-staging-74012/ed21bb90-5c3f-11ee-ae35-0a616d7185ba",
+      "AmplifyAppId": "d361fxuq3s1yc9"
+    },
+    "categories": {
+      "api": {
+        "kmc1": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

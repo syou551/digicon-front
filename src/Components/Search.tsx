@@ -1,17 +1,23 @@
 import {TextField, IconButton, Stack, Container, Box} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import {useState} from 'react';
-import dummy1 from "../dummy/p00001.jpg";
-import dummy2 from "../dummy/p00010.jpg";
-import dummy3 from "../dummy/p00012.jpg";
 
 const Search = ():JSX.Element=>{
     const [query, setQuery]  = useState("");
     const [show , setShow] = useState(false);
+    const [json, setJson] = useState<result>();
 
-    const startSearch = ():void=>{
-        alert(query);
-        setShow(true);
+    const startSearch = ()=>{
+
+        fetch("https://ec2-3-27-85-42.ap-southeast-2.compute.amazonaws.com/tag/"+query).then((response)=>response.json()).then((json)=>{setJson(JSON.parse(json)); setShow(true);});
+    }
+
+    type imageID = {
+        id : string
+    }
+
+    type result = {
+        results : imageID[]
     }
 
     const ResultRow = ():JSX.Element=>{
@@ -19,15 +25,9 @@ const Search = ():JSX.Element=>{
         return(
             <Container>
                 <Stack direction="column" spacing={2} overflow="auto" maxWidth="650px">
-                    <Box>
-                        <img src={dummy1} width="200px"/>
-                    </Box>
-                    <Box>
-                        <img src={dummy2} width="200px"/>
-                    </Box>
-                    <Box>
-                        <img src={dummy3} width="200px"/>
-                    </Box>
+                    {json?.results.map((image, index)=>(<Box key={index}>
+                        <img crossOrigin="anonymous" src={"https://ec2-3-27-85-42.ap-southeast-2.compute.amazonaws.com/images/"+image.id} width="200px"/>
+                    </Box>))}
                 </Stack>
             </Container>
         );

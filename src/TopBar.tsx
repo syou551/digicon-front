@@ -47,9 +47,9 @@ const TopBar  =():JSX.Element=>{
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={()=>handleClose("/upload")}>upload</MenuItem>
+                <MenuItem onClick={()=>handleClose("/up")}>upload</MenuItem>
                 <MenuItem onClick={()=>handleClose("/search")}>search</MenuItem>
-                <MenuItem onClick={()=>handleClose("/")}>login</MenuItem>
+                <MenuItem onClick={()=>handleClose("/eyetracking")}>tryEyetracking</MenuItem>
               </Menu>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link href="/" underline="none" color="inherit" >AppName</Link>

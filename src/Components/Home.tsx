@@ -51,9 +51,9 @@ const Home = ():JSX.Element=>{
 
     return(
         <>
-            <Box>This page is Top page of Manga Database</Box>
+            <Box>In this page, you can try EyeTracking by SeeSo</Box>
             <Box>You can search by text query and see reader eye motion when reading one</Box>
-            <Button onClick={showDistance}>距離を見る</Button>
+            <Button onClick={showDistance}>Stop Tracking</Button>
             <canvas id="preview"></canvas>
             <canvas id="output"></canvas>
         </>
