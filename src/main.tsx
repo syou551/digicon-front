@@ -2,18 +2,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { AmplifyProvider } from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
-import config from './aws-exports';
-
-Amplify.configure(config);
+import React from 'react'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <AmplifyProvider>
+  <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    </AmplifyProvider>,
-)
+    </React.StrictMode>,
+);
